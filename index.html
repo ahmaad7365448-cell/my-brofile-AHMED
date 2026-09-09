@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحمد حارثة | AI Web Developer</title>
+    <title>أحمد حارثة | مطور ويب وذكاء اصطناعي</title>
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0b1120;
-            --card-bg: rgba(30, 41, 59, 0.5);
-            --border-color: rgba(56, 189, 248, 0.2);
-            --border-hover: rgba(56, 189, 248, 0.6);
+            --bg-color: #080d1a;
+            --card-bg: rgba(18, 28, 47, 0.65);
+            --border-color: rgba(56, 189, 248, 0.25);
+            --border-hover: rgba(56, 189, 248, 0.8);
             --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.3);
+            --primary-glow: rgba(56, 189, 248, 0.4);
             --accent: #818cf8;
+            --accent-glow: rgba(129, 140, 248, 0.4);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -30,10 +31,11 @@
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%);
+                radial-gradient(at 10% 10%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, rgba(129, 140, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.8) 0px, transparent 100%);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -43,21 +45,43 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(11, 17, 32, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(8, 13, 26, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 18px 8%;
+            padding: 16px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        /* Modern Logo Styling */
         .logo {
-            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
             font-weight: 800;
             letter-spacing: -0.5px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #080d1a;
+            font-size: 1.1rem;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .logo-text span {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -66,14 +90,15 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
+            position: relative;
         }
 
         nav a:hover {
@@ -81,20 +106,20 @@
         }
 
         .lang-btn {
-            background: rgba(56, 189, 248, 0.08);
+            background: rgba(56, 189, 248, 0.1);
             border: 1px solid var(--border-color);
             color: var(--primary);
-            padding: 8px 18px;
+            padding: 8px 20px;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
         }
 
         .lang-btn:hover {
             background: var(--primary);
             color: var(--bg-color);
-            box-shadow: 0 0 15px var(--primary-glow);
+            box-shadow: 0 0 20px var(--primary-glow);
         }
 
         /* Hero Section */
@@ -103,30 +128,44 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 8% 60px;
+            padding: 140px 8% 70px;
             text-align: center;
         }
 
         .hero-content {
-            max-width: 750px;
+            max-width: 800px;
         }
 
-        /* Avatar Styling with Animated Glow */
+        /* Avatar Styling with Animated Dual Glow Ring */
         .avatar-wrapper {
             position: relative;
-            width: 170px;
-            height: 170px;
-            margin: 0 auto 30px;
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 35px;
             border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: 0 0 30px var(--primary-glow);
-            animation: pulseGlow 4s infinite alternate;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--primary), #3b82f6, var(--accent));
+            box-shadow: 0 0 35px var(--primary-glow);
+            animation: pulseGlow 3.5s infinite alternate;
+        }
+
+        .avatar-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -6px; left: -6px; right: -6px; bottom: -6px;
+            border-radius: 50%;
+            border: 2px dashed rgba(56, 189, 248, 0.5);
+            animation: rotateRing 20s linear infinite;
         }
 
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
-            100% { box-shadow: 0 0 40px rgba(129, 140, 248, 0.6); }
+            0% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.3), 0 0 50px rgba(56, 189, 248, 0.1); }
+            100% { box-shadow: 0 0 45px rgba(129, 140, 248, 0.6), 0 0 80px rgba(129, 140, 248, 0.3); }
+        }
+
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .avatar-img {
@@ -139,7 +178,7 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 12px;
             line-height: 1.2;
@@ -152,7 +191,7 @@
         }
 
         .hero h2 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--primary);
             margin-bottom: 20px;
             font-weight: 600;
@@ -160,8 +199,18 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -170,60 +219,111 @@
             gap: 10px;
             background: linear-gradient(135deg, #0284c7, #3b82f6);
             color: #fff;
-            padding: 12px 30px;
-            border-radius: 10px;
+            padding: 12px 32px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.3);
+            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.35);
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(2, 132, 199, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(2, 132, 199, 0.55);
         }
 
-        /* Glassmorphism Cards & Sections */
+        .btn-secondary {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-color);
+            box-shadow: none;
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Glassmorphism Sections */
         section {
-            padding: 80px 8%;
+            padding: 90px 8%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 55px;
+            font-weight: 800;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
+            width: 70px;
+            height: 4px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
-            margin: 12px auto 0;
+            margin: 14px auto 0;
             border-radius: 2px;
         }
 
         .glass-card {
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 18px;
+            padding: 32px;
         }
 
         .glass-card:hover {
             border-color: var(--border-hover);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .highlight-item {
+            background: rgba(11, 17, 32, 0.5);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            text-align: center;
+        }
+
+        .highlight-item h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .highlight-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
         }
 
         .skill-card {
@@ -231,43 +331,71 @@
         }
 
         .skill-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 18px;
         }
 
         .skill-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
         .skill-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
         }
 
-        /* Projects Grid */
+        /* Projects Grid & Project Images */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
         }
 
         .project-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            padding: 24px;
+        }
+
+        .project-img-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
         }
 
         .project-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
+            color: var(--text-main);
         }
 
         .project-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             margin-bottom: 20px;
+            line-height: 1.7;
         }
 
         .tags {
@@ -280,20 +408,108 @@
         .tag {
             background: rgba(56, 189, 248, 0.1);
             color: var(--primary);
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            font-weight: 600;
+        }
+
+        /* Premium Quick Contact Cards */
+        .contact-quick {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .quick-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--text-main);
+            padding: 35px 20px;
+            border-radius: 20px;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .quick-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.2);
+        }
+
+        .quick-card:hover::before {
+            opacity: 1;
+        }
+
+        .quick-card i {
+            font-size: 2.2rem;
+            color: #fff;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .quick-card:hover i {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .quick-info h4 {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .quick-info p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            direction: ltr;
+        }
+
+        .quick-info span {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Contact Form */
         .contact-container {
-            max-width: 600px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .form-group label {
@@ -301,46 +517,55 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             color: var(--text-main);
+            font-weight: 600;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
-            background: rgba(11, 17, 32, 0.6);
+            padding: 16px 20px;
+            background: rgba(8, 13, 26, 0.7);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 12px;
             color: var(--text-main);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 10px var(--primary-glow);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 35px;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
+            background: rgba(8, 13, 26, 0.9);
         }
 
         @media (max-width: 768px) {
             header { padding: 15px 5%; }
             nav a { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            section { padding: 60px 5%; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero h2 { font-size: 1.15rem; }
+            section { padding: 65px 5%; }
+            .avatar-wrapper { width: 160px; height: 160px; }
+            .quick-card { padding: 25px 15px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
-        <div class="logo">أحمد حارثة</div>
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="logo-text">AHMED <span>HARITHA</span></div>
+        </a>
         <nav>
             <a href="#about" id="nav-about">عنّي</a>
             <a href="#skills" id="nav-skills">المهارات</a>
@@ -350,105 +575,221 @@
         <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
     </header>
 
-    <section class="hero" id="about">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <!-- الصورة الشخصية مع إطار جذاب -->
             <div class="avatar-wrapper">
                 <img src="Wh.jpeg" alt="أحمد حارثة" class="avatar-img">
             </div>
             
             <h1 id="hero-title">مرحباً، أنا <span>أحمد حارثة</span></h1>
             <h2 id="hero-subtitle">مطور ويب وذكاء اصطناعي (AI Web Developer)</h2>
-            <p id="hero-desc">أقوم ببناء واجهات تفاعلية متطورة ودمج تقنيات الذكاء الاصطناعي مع حلول الويب الحديثة لتقديم تجارب مستخدم فريدة وعالية الأداء.</p>
-            <a href="#contact" class="btn" id="hero-btn"><i class="fa-paper-plane"></i> تواصل معي</a>
+            <p id="hero-desc">أقوم بابتكار وتطوير واجهات ويب فائقة الأداء، ودمج أدوات الذكاء الاصطناعي لبناء حلول برمجية متكاملة تلبي احتياجات المستخدمين وتوفر تجربة رقمية فريدة.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn" id="hero-btn"><i class="fa-solid fa-paper-plane"></i> تواصل معي</a>
+                <a href="#projects" class="btn btn-secondary" id="hero-btn-sec"><i class="fa-solid fa-laptop-code"></i> استعراض الأعمال</a>
+            </div>
         </div>
     </section>
 
+    <!-- About Me Section -->
+    <section id="about">
+        <h2 class="section-title" id="about-title">نبذة عنّي</h2>
+        <div class="glass-card">
+            <p class="about-text" id="about-desc">
+                مطور برمجيات متخصص في تطوير واجهات الويب الحديثة والحلول الذكية. أمتلك خبرة في بناء تطبيقات ويب تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript، بالإضافة إلى دمج واجهات برمجة التطبيقات (APIs) للذكاء الاصطناعي مع الاهتمام بأدق تفاصيل تجربة المستخدم (UI/UX) والتصميم العصري (Glassmorphism).
+            </p>
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <h4>+100%</h4>
+                    <p id="h1-text">التزام بالجودة والدقة</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>AI Powered</h4>
+                    <p id="h2-text">دمج تقنيات الذكاء الاصطناعي</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Modern UI</h4>
+                    <p id="h3-text">تصاميم متطورة واستجابة كاملة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
     <section id="skills">
         <h2 class="section-title" id="skills-title">المهارات والتقنيات</h2>
         <div class="skills-grid">
             <div class="glass-card skill-card">
                 <i class="fa-brands fa-code"></i>
-                <h3 id="s1-title">Frontend Development</h3>
-                <p>HTML5, CSS3, JavaScript, Responsive Glassmorphism</p>
+                <h3 id="s1-title">تطوير الواجهات Front-End</h3>
+                <p id="s1-desc">HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Glassmorphism Design</p>
             </div>
             <div class="glass-card skill-card">
                 <i class="fa-solid fa-brain"></i>
-                <h3 id="s2-title">AI Integration</h3>
-                <p>API Integration, LLMs, Automation & Prompt Design</p>
+                <h3 id="s2-title">دمج الذكاء الاصطناعي AI</h3>
+                <p id="s2-desc">API Integration, LLM Models, Prompt Engineering, Automation Workflows</p>
             </div>
             <div class="glass-card skill-card">
                 <i class="fa-solid fa-laptop-code"></i>
-                <h3 id="s3-title">Web Tools</h3>
-                <p>VS Code, Git & GitHub Version Control, Vercel Deployment</p>
+                <h3 id="s3-title">أدوات وبيئة العمل</h3>
+                <p id="s3-desc">VS Code, Git & GitHub, Vercel Deployment, Web Performance Optimization</p>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
-        <h2 class="section-title" id="projects-title">أحدث المشاريع</h2>
+        <h2 class="section-title" id="projects-title">معرض الأعمال البرمجية</h2>
         <div class="projects-grid">
+            
+            <!-- Project 1 -->
             <div class="glass-card project-card">
                 <div>
-                    <h3 id="p1-title">تطبيق تحليل البيانات بالذكاء الاصطناعي</h3>
-                    <p id="p1-desc">منصة تفاعلية تستخدم تقنيات الذكاء الاصطناعي لمعالجة النصوص وتحليلها وتقديم نتائج فورية للمستخدم.</p>
+                    <div class="project-img-wrapper">
+                        <!-- صورة تعبر عن الأكواد البرمجية -->
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="تطوير البرمجيات والأكواد" class="project-img">
+                    </div>
+                    <h3 id="p1-title">منصة تحليل النصوص والذكاء الاصطناعي</h3>
+                    <p id="p1-desc">مشروع برمجي متقدم يعتمد على لغة JavaScript وربط واجهات الذكاء الاصطناعي (AI APIs) لمعالجة النصوص وإستخراج التحليلات الفورية بواجهة Glassmorphism جذابة.</p>
                     <div class="tags">
-                        <span class="tag">AI APIs</span>
                         <span class="tag">JavaScript</span>
-                        <span class="tag">UI/UX</span>
+                        <span class="tag">AI APIs</span>
+                        <span class="tag">HTML5/CSS3</span>
                     </div>
                 </div>
-                <a href="#contact" class="btn" style="padding: 8px 18px; font-size: 0.9rem;" id="p1-btn">معاينة المشروع</a>
+                <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p1-btn">طلب مشروع مشابه</a>
             </div>
 
+            <!-- Project 2 -->
             <div class="glass-card project-card">
                 <div>
-                    <h3 id="p2-title">موقع BENGUEN MOBILYA - TASARIM</h3>
-                    <p id="p2-desc">واجهة ويب مخصصة لعرض التصاميم وتفاصيل الأثاث العصري بتأثيرات Glassmorphism ودعم الهوية البصرية.</p>
+                    <div class="project-img-wrapper">
+                        <!-- صورة تعبر عن تصميم واجهات المتاجر والتطبيقات -->
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="تطوير واجهات المستخدم" class="project-img">
+                    </div>
+                    <h3 id="p2-title">تطبيق متجر إلكتروني عالي الأداء</h3>
+                    <p id="p2-desc">واجهة ويب تفاعلية متجاوبة بالكامل لبناء المتاجر الحديثة، تتضمن نظام تصفية برمجي سلس، سلة شراء ديناميكية، وتجربة مستخدم مريحة على الموبايل والشاشات الكبيرة.</p>
                     <div class="tags">
-                        <span class="tag">Web Design</span>
-                        <span class="tag">Flexbox</span>
-                        <span class="tag">Glassmorphism</span>
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">JS ES6</span>
+                        <span class="tag">Flexbox & Grid</span>
                     </div>
                 </div>
-                <a href="#contact" class="btn" style="padding: 8px 18px; font-size: 0.9rem;" id="p2-btn">معاينة المشروع</a>
+                <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p2-btn">طلب مشروع مشابه</a>
             </div>
+
+            <!-- Project 3 -->
+            <div class="glass-card project-card">
+                <div>
+                    <div class="project-img-wrapper">
+                        <!-- صورة تعبر عن الرسوم البيانية ولوحات التحكم -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="لوحة تحكم إحصائية" class="project-img">
+                    </div>
+                    <h3 id="p3-title">لوحة تحكم تفاعلية لإدارة البيانات</h3>
+                    <p id="p3-desc">تصميم وتطوير Dashboard تفاعلية لعرض الرسوم البيانية والإحصائيات بدقة عالية مع دعم الوضع الداكن والتأثيرات الزجاجية اللطيفة visual styling.</p>
+                    <div class="tags">
+                        <span class="tag">Frontend Dev</span>
+                        <span class="tag">Data Visuals</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p3-btn">طلب مشروع مشابه</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="glass-card project-card">
+                <div>
+                    <div class="project-img-wrapper">
+                        <!-- صورة تعبر عن بيئة العمل ومواقع البورتفوليو -->
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="موقع شخصي وبورتفوليو برمجي" class="project-img">
+                    </div>
+                    <h3 id="p4-title">تطوير مواقع تعريفية ومحافظ أعمال (Portfolio)</h3>
+                    <p id="p4-desc">تطوير صفحات هبوط وشخصية خفيفة وسريعة التحميل بالكامل بأسلوب Glassmorphism عصري ودعم كامل للغتين العربية والإنجليزية مع التجاوب الشامل.</p>
+                    <div class="tags">
+                        <span class="tag">Clean Code</span>
+                        <span class="tag">Portfolio</span>
+                        <span class="tag">Multi-Language</span>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p4-btn">طلب مشروع مشابه</a>
+            </div>
+
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title" id="contact-title">تواصل معي</h2>
-        <div class="glass-card contact-container">
-            <form action="https://formspree.io/f/xnqyrzpk" method="POST" id="contact-form">
-                <div class="form-group">
-                    <label id="lbl-name">الاسم الكامل</label>
-                    <input type="text" name="name" required placeholder="أدخل اسمك" id="in-name">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-email">البريد الإلكتروني</label>
-                    <input type="email" name="email" required placeholder="example@mail.com" id="in-email">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-msg">الرسالة</label>
-                    <textarea name="message" rows="5" required placeholder="اكتب رسالتك هنا..." id="in-msg"></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%; justify-content: center;" id="btn-submit">
-                    <i class="fa-solid fa-paper-plane"></i> إرسال الرسالة
-                </button>
-            </form>
+        
+        <div class="contact-container">
+            <!-- Premium Contact Information Cards -->
+            <div class="contact-quick">
+                <!-- WhatsApp Card -->
+                <a href="https://wa.me/905423456316" target="_blank" class="quick-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="quick-info">
+                        <h4 id="qc-phone">WhatsApp</h4>
+                        <p>+90 542 345 6316</p>
+                        <span id="qc-phone-sub">متاح للاستفسارات</span>
+                    </div>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto:aborame5230200@icloud.com" class="quick-card">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="quick-info">
+                        <h4 id="qc-email">Email Address</h4>
+                        <p style="font-size:0.95rem;">aborame5230200@icloud.com</p>
+                        <span id="qc-email-sub">راسلني مباشرة</span>
+                    </div>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/ahmed_abo_rame?stkn=eTJjOTVpaDhpYmNw&utm_source=qr" target="_blank" class="quick-card">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div class="quick-info">
+                        <h4>Instagram</h4>
+                        <p>@ahmed_abo_rame</p>
+                        <span id="qc-insta-sub">تابع أحدث أعمالي</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="glass-card">
+                <form action="https://formspree.io/f/xnqyrzpk" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label id="lbl-name">الاسم الكامل</label>
+                        <input type="text" name="name" required placeholder="أدخل اسمك الكريم" id="in-name">
+                    </div>
+                    <div class="form-group">
+                        <label id="lbl-email">البريد الإلكتروني</label>
+                        <input type="email" name="email" required placeholder="example@mail.com" id="in-email">
+                    </div>
+                    <div class="form-group">
+                        <label id="lbl-msg">الرسالة</label>
+                        <textarea name="message" rows="6" required placeholder="اكتب تفاصيل مشروعك أو استفسارك هنا..." id="in-msg"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; justify-content: center; padding: 16px; font-size: 1.1rem;" id="btn-submit">
+                        <i class="fa-solid fa-paper-plane"></i> إرسال الرسالة
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p id="footer-text">جميع الحقوق محفوظة © 2026 أحمد حارثة</p>
+        <p id="footer-text">جميع الحقوق محفوظة © 2026 أحمد حارثة - مطور ويب وذكاء اصطناعي</p>
     </footer>
 
+    <!-- JavaScript Language Switcher Script -->
     <script>
         let currentLang = 'ar';
 
         const translations = {
             ar: {
-                logo: 'أحمد حارثة',
                 navAbout: 'عنّي',
                 navSkills: 'المهارات',
                 navProjects: 'المشاريع',
@@ -456,31 +797,50 @@
                 langBtn: 'English',
                 heroTitle: 'مرحباً، أنا <span>أحمد حارثة</span>',
                 heroSubtitle: 'مطور ويب وذكاء اصطناعي (AI Web Developer)',
-                heroDesc: 'أقوم ببناء واجهات تفاعلية متطورة ودمج تقنيات الذكاء الاصطناعي مع حلول الويب الحديثة لتقديم تجارب مستخدم فريدة وعالية الأداء.',
-                heroBtn: '<i class="fa-paper-plane"></i> تواصل معي',
+                heroDesc: 'أقوم بابتكار وتطوير واجهات ويب فائقة الأداء، ودمج أدوات الذكاء الاصطناعي لبناء حلول برمجية متكاملة تلبي احتياجات المستخدمين وتوفر تجربة رقمية فريدة.',
+                heroBtn: '<i class="fa-solid fa-paper-plane"></i> تواصل معي',
+                heroBtnSec: '<i class="fa-solid fa-laptop-code"></i> استعراض الأعمال',
+                aboutTitle: 'نبذة عنّي',
+                aboutDesc: 'مطور برمجيات متخصص في تطوير واجهات الويب الحديثة والحلول الذكية. أمتلك خبرة في بناء تطبيقات ويب تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript، بالإضافة إلى دمج واجهات برمجة التطبيقات (APIs) للذكاء الاصطناعي مع الاهتمام بأدق تفاصيل تجربة المستخدم (UI/UX) والتصميم العصري (Glassmorphism).',
+                h1Text: 'التزام بالجودة والدقة',
+                h2Text: 'دمج تقنيات الذكاء الاصطناعي',
+                h3Text: 'تصاميم متطورة واستجابة كاملة',
                 skillsTitle: 'المهارات والتقنيات',
-                s1Title: 'تطوير الواجهات (Frontend)',
-                s2Title: 'تكامل الذكاء الاصطناعي',
-                s3Title: 'أدوات التطوير والنشر',
-                projectsTitle: 'أحدث المشاريع',
-                p1Title: 'تطبيق تحليل البيانات بالذكاء الاصطناعي',
-                p1Desc: 'منصة تفاعلية تستخدم تقنيات الذكاء الاصطناعي لمعالجة النصوص وتحليلها وتقديم نتائج فورية للمستخدم.',
-                p1Btn: 'معاينة المشروع',
-                p2Title: 'موقع BENGUEN MOBILYA - TASARIM',
-                p2Desc: 'واجهة ويب مخصصة لعرض التصاميم وتفاصيل الأثاث العصري بتأثيرات Glassmorphism ودعم الهوية البصرية.',
-                p2Btn: 'معاينة المشروع',
+                s1Title: 'تطوير الواجهات Front-End',
+                s1Desc: 'HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Glassmorphism Design',
+                s2Title: 'دمج الذكاء الاصطناعي AI',
+                s2Desc: 'API Integration, LLM Models, Prompt Engineering, Automation Workflows',
+                s3Title: 'أدوات وبيئة العمل',
+                s3Desc: 'VS Code, Git & GitHub, Vercel Deployment, Web Performance Optimization',
+                projectsTitle: 'معرض الأعمال البرمجية',
+                p1Title: 'منصة تحليل النصوص والذكاء الاصطناعي',
+                p1Desc: 'مشروع برمجي متقدم يعتمد على لغة JavaScript وربط واجهات الذكاء الاصطناعي (AI APIs) لمعالجة النصوص وإستخراج التحليلات الفورية بواجهة Glassmorphism جذابة.',
+                p1Btn: 'طلب مشروع مشابه',
+                p2Title: 'تطبيق متجر إلكتروني عالي الأداء',
+                p2Desc: 'واجهة ويب تفاعلية متجاوبة بالكامل لبناء المتاجر الحديثة، تتضمن نظام تصفية برمجي سلس، سلة شراء ديناميكية، وتجربة مستخدم مريحة على الموبايل والشاشات الكبيرة.',
+                p2Btn: 'طلب مشروع مشابه',
+                p3Title: 'لوحة تحكم تفاعلية لإدارة البيانات',
+                p3Desc: 'تصميم وتطوير Dashboard تفاعلية لعرض الرسوم البيانية والإحصائيات بدقة عالية مع دعم الوضع الداكن والتأثيرات الزجاجية اللطيفة visual styling.',
+                p3Btn: 'طلب مشروع مشابه',
+                p4Title: 'تطوير مواقع تعريفية ومحافظ أعمال (Portfolio)',
+                p4Desc: 'تطوير صفحات هبوط وشخصية خفيفة وسريعة التحميل بالكامل بأسلوب Glassmorphism عصري ودعم كامل للغتين العربية والإنجليزية مع التجاوب الشامل.',
+                p4Btn: 'طلب مشروع مشابه',
                 contactTitle: 'تواصل معي',
+                qcPhone: 'WhatsApp',
+                qcEmail: 'Email Address',
+                qcPhoneSub: 'متاح للاستفسارات',
+                qcEmailSub: 'راسلني مباشرة',
+                qcInstaSub: 'تابع أحدث أعمالي',
                 lblName: 'الاسم الكامل',
                 lblEmail: 'البريد الإلكتروني',
                 lblMsg: 'الرسالة',
-                phName: 'أدخل اسمك',
+                phName: 'أدخل اسمك الكريم',
                 phEmail: 'example@mail.com',
-                phMsg: 'اكتب رسالتك هنا...',
+                phMsg: 'اكتب تفاصيل مشروعك أو استفسارك هنا...',
                 btnSubmit: '<i class="fa-solid fa-paper-plane"></i> إرسال الرسالة',
-                footerText: 'جميع الحقوق محفوظة © 2026 أحمد حارثة'
+                footerText: 'جميع الحقوق محفوظة © 2026 أحمد حارثة - مطور ويب وذكاء اصطناعي'
             },
             en: {
-                logo: 'Ahmed Haritha',
                 navAbout: 'About',
                 navSkills: 'Skills',
                 navProjects: 'Projects',
@@ -488,28 +848,48 @@
                 langBtn: 'العربية',
                 heroTitle: 'Hi, I am <span>Ahmed Haritha</span>',
                 heroSubtitle: 'AI Web Developer',
-                heroDesc: 'Building modern interactive web interfaces and integrating AI models to deliver seamless, high-performance digital experiences.',
-                heroBtn: '<i class="fa-paper-plane"></i> Get in Touch',
+                heroDesc: 'Creating modern, high-performance web interfaces and integrating AI tools to build powerful digital products and seamless user experiences.',
+                heroBtn: '<i class="fa-solid fa-paper-plane"></i> Get in Touch',
+                heroBtnSec: '<i class="fa-solid fa-laptop-code"></i> View Projects',
+                aboutTitle: 'About Me',
+                aboutDesc: 'Software developer specializing in modern front-end engineering and AI integration. Experienced in crafting responsive, interactive web applications using HTML5, CSS3, JavaScript, and integrating AI APIs, focused on crisp UI/UX and Glassmorphism styling.',
+                h1Text: 'Commitment to Quality',
+                h2Text: 'AI Integration Stack',
+                h3Text: 'Fully Responsive Modern UI',
                 skillsTitle: 'Skills & Tech Stack',
-                s1Title: 'Frontend Development',
+                s1Title: 'Front-End Development',
+                s1Desc: 'HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Glassmorphism Design',
                 s2Title: 'AI Integration',
+                s2Desc: 'API Integration, LLM Models, Prompt Engineering, Automation Workflows',
                 s3Title: 'Developer Tools',
-                projectsTitle: 'Featured Projects',
-                p1Title: 'AI Data Analysis App',
-                p1Desc: 'Interactive web platform leveraging AI models to analyze text and generate instant insights.',
-                p1Btn: 'View Project',
-                p2Title: 'BENGUEN MOBILYA - TASARIM',
-                p2Desc: 'Custom web UI showcasing modern furniture designs using Glassmorphism and specialized branding.',
-                p2Btn: 'View Project',
+                s3Desc: 'VS Code, Git & GitHub, Vercel Deployment, Web Performance Optimization',
+                projectsTitle: 'Programming Portfolio',
+                p1Title: 'AI Text Analysis Platform',
+                p1Desc: 'Advanced web project built with JavaScript & AI APIs for instant text processing and analysis delivered via a sleek Glassmorphism interface.',
+                p1Btn: 'Request Similar Project',
+                p2Title: 'High-Performance E-Commerce Web App',
+                p2Desc: 'Fully responsive e-commerce front-end featuring dynamic filtering, interactive shopping cart, and smooth mobile-first UX.',
+                p2Btn: 'Request Similar Project',
+                p3Title: 'Interactive Data Dashboard',
+                p3Desc: 'Interactive admin dashboard visualizing complex analytics, charts, and metrics with glassmorphism dark-theme styling.',
+                p3Btn: 'Request Similar Project',
+                p4Title: 'Custom Portfolio & Landing Pages',
+                p4Desc: 'Fast, lightweight portfolio & landing pages designed with modern CSS effects, full multi-language support, and optimal responsive layouts.',
+                p4Btn: 'Request Similar Project',
                 contactTitle: 'Contact Me',
+                qcPhone: 'WhatsApp',
+                qcEmail: 'Email Address',
+                qcPhoneSub: 'Available for inquiries',
+                qcEmailSub: 'Email me directly',
+                qcInstaSub: 'Follow my latest work',
                 lblName: 'Full Name',
                 lblEmail: 'Email Address',
                 lblMsg: 'Message',
                 phName: 'Your full name',
                 phEmail: 'example@mail.com',
-                phMsg: 'Type your message here...',
+                phMsg: 'Write your project details or message here...',
                 btnSubmit: '<i class="fa-solid fa-paper-plane"></i> Send Message',
-                footerText: 'All rights reserved © 2026 Ahmed Haritha'
+                footerText: 'All rights reserved © 2026 Ahmed Haritha - AI Web Developer'
             }
         };
 
@@ -520,7 +900,7 @@
             html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
 
             const t = translations[currentLang];
-            document.querySelector('.logo').innerText = t.logo;
+
             document.getElementById('nav-about').innerText = t.navAbout;
             document.getElementById('nav-skills').innerText = t.navSkills;
             document.getElementById('nav-projects').innerText = t.navProjects;
@@ -531,11 +911,21 @@
             document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
             document.getElementById('hero-desc').innerText = t.heroDesc;
             document.getElementById('hero-btn').innerHTML = t.heroBtn;
+            document.getElementById('hero-btn-sec').innerHTML = t.heroBtnSec;
+
+            document.getElementById('about-title').innerText = t.aboutTitle;
+            document.getElementById('about-desc').innerText = t.aboutDesc;
+            document.getElementById('h1-text').innerText = t.h1Text;
+            document.getElementById('h2-text').innerText = t.h2Text;
+            document.getElementById('h3-text').innerText = t.h3Text;
 
             document.getElementById('skills-title').innerText = t.skillsTitle;
             document.getElementById('s1-title').innerText = t.s1Title;
+            document.getElementById('s1-desc').innerText = t.s1Desc;
             document.getElementById('s2-title').innerText = t.s2Title;
+            document.getElementById('s2-desc').innerText = t.s2Desc;
             document.getElementById('s3-title').innerText = t.s3Title;
+            document.getElementById('s3-desc').innerText = t.s3Desc;
 
             document.getElementById('projects-title').innerText = t.projectsTitle;
             document.getElementById('p1-title').innerText = t.p1Title;
@@ -544,8 +934,20 @@
             document.getElementById('p2-title').innerText = t.p2Title;
             document.getElementById('p2-desc').innerText = t.p2Desc;
             document.getElementById('p2-btn').innerText = t.p2Btn;
+            document.getElementById('p3-title').innerText = t.p3Title;
+            document.getElementById('p3-desc').innerText = t.p3Desc;
+            document.getElementById('p3-btn').innerText = t.p3Btn;
+            document.getElementById('p4-title').innerText = t.p4Title;
+            document.getElementById('p4-desc').innerText = t.p4Desc;
+            document.getElementById('p4-btn').innerText = t.p4Btn;
 
             document.getElementById('contact-title').innerText = t.contactTitle;
+            document.getElementById('qc-phone').innerText = t.qcPhone;
+            document.getElementById('qc-email').innerText = t.qcEmail;
+            document.getElementById('qc-phone-sub').innerText = t.qcPhoneSub;
+            document.getElementById('qc-email-sub').innerText = t.qcEmailSub;
+            document.getElementById('qc-insta-sub').innerText = t.qcInstaSub;
+            
             document.getElementById('lbl-name').innerText = t.lblName;
             document.getElementById('lbl-email').innerText = t.lblEmail;
             document.getElementById('lbl-msg').innerText = t.lblMsg;
