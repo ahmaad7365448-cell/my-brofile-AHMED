@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحمد حارثة | مطور ويب وذكاء اصطناعي</title>
+    <title>أحمد | مطور ويب وذكاء اصطناعي</title>
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -40,7 +40,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Navigation */
         header {
             position: fixed;
             top: 0;
@@ -56,7 +55,6 @@
             align-items: center;
         }
 
-        /* Modern Logo Styling */
         .logo {
             display: flex;
             align-items: center;
@@ -122,7 +120,6 @@
             box-shadow: 0 0 20px var(--primary-glow);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -136,7 +133,6 @@
             max-width: 800px;
         }
 
-        /* Avatar Styling with Animated Dual Glow Ring */
         .avatar-wrapper {
             position: relative;
             width: 190px;
@@ -246,7 +242,6 @@
             color: var(--primary);
         }
 
-        /* Glassmorphism Sections */
         section {
             padding: 90px 8%;
         }
@@ -282,7 +277,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* About Section */
         .about-text {
             font-size: 1.1rem;
             color: var(--text-muted);
@@ -319,7 +313,6 @@
             color: var(--text-muted);
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -348,7 +341,6 @@
             font-size: 0.92rem;
         }
 
-        /* Projects Grid & Project Images */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -415,7 +407,6 @@
             font-weight: 600;
         }
 
-        /* Premium Quick Contact Cards */
         .contact-quick {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -502,7 +493,6 @@
             letter-spacing: 1px;
         }
 
-        /* Contact Form */
         .contact-container {
             max-width: 850px;
             margin: 0 auto;
@@ -547,6 +537,137 @@
             background: rgba(8, 13, 26, 0.9);
         }
 
+        /* AI Chatbot Styles */
+        .chat-widget-btn {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #080d1a;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 25px var(--primary-glow);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 95px;
+            left: 25px;
+            width: 360px;
+            max-width: 90vw;
+            height: 480px;
+            background: rgba(18, 28, 47, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            display: none;
+            flex-direction: column;
+            z-index: 9999;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 15px 20px;
+            background: rgba(8, 13, 26, 0.8);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .chat-header h4 span {
+            color: var(--primary);
+        }
+
+        .chat-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #0284c7, #3b82f6);
+            color: #fff;
+            border-bottom-left-radius: 2px;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-input-area {
+            padding: 12px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+            background: rgba(8, 13, 26, 0.8);
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px 14px;
+            background: rgba(8, 13, 26, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .chat-input-area input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .chat-send-btn {
+            background: var(--primary);
+            color: #080d1a;
+            border: none;
+            padding: 0 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             header { padding: 15px 5%; }
             nav a { display: none; }
@@ -564,7 +685,7 @@
     <header>
         <a href="#" class="logo">
             <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
-            <div class="logo-text">AHMED <span>HARITHA</span></div>
+            <div class="logo-text">AHMED <span>WEB</span></div>
         </a>
         <nav>
             <a href="#about" id="nav-about">عنّي</a>
@@ -579,12 +700,12 @@
     <section class="hero" id="hero">
         <div class="hero-content">
             <div class="avatar-wrapper">
-                <img src="Wh.jpeg" alt="أحمد حارثة" class="avatar-img">
+                <img src="Wh.jpeg" alt="الصورة الشخصية" class="avatar-img">
             </div>
             
-            <h1 id="hero-title">مرحباً، أنا <span>أحمد حارثة</span></h1>
+            <h1 id="hero-title">مرحباً، أنا <span>أحمد</span></h1>
             <h2 id="hero-subtitle">مطور ويب وذكاء اصطناعي (AI Web Developer)</h2>
-            <p id="hero-desc">أقوم بابتكار وتطوير واجهات ويب فائقة الأداء، ودمج أدوات الذكاء الاصطناعي لبناء حلول برمجية متكاملة تلبي احتياجات المستخدمين وتوفر تجربة رقمية فريدة.</p>
+            <p id="hero-desc">أقوم بابتكار وتطوير واجهات ويب فائقة الأداء، ودمج أدوات الذكاء الاصطناعي لبناء حلول برمجية متكاملة للوكالات الرقمية والمشاريع المتقدمة.</p>
             <div class="btn-group">
                 <a href="#contact" class="btn" id="hero-btn"><i class="fa-solid fa-paper-plane"></i> تواصل معي</a>
                 <a href="#projects" class="btn btn-secondary" id="hero-btn-sec"><i class="fa-solid fa-laptop-code"></i> استعراض الأعمال</a>
@@ -597,7 +718,7 @@
         <h2 class="section-title" id="about-title">نبذة عنّي</h2>
         <div class="glass-card">
             <p class="about-text" id="about-desc">
-                مطور برمجيات متخصص في تطوير واجهات الويب الحديثة والحلول الذكية. أمتلك خبرة في بناء تطبيقات ويب تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript، بالإضافة إلى دمج واجهات برمجة التطبيقات (APIs) للذكاء الاصطناعي مع الاهتمام بأدق تفاصيل تجربة المستخدم (UI/UX) والتصميم العصري (Glassmorphism).
+                مطور برمجيات متخصص في تطوير واجهات الويب الحديثة والحلول الذكية. أمتلك خبرة في بناء تطبيقات ويب تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript، بالإضافة إلى دمج واجهات برمجة التطبيقات (APIs) للذكاء الاصطناعي مع الاهتمام بأدق تفاصيل تجربة المستخدم (UI/UX).
             </p>
             <div class="about-highlights">
                 <div class="highlight-item">
@@ -623,7 +744,7 @@
             <div class="glass-card skill-card">
                 <i class="fa-brands fa-code"></i>
                 <h3 id="s1-title">تطوير الواجهات Front-End</h3>
-                <p id="s1-desc">HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Glassmorphism Design</p>
+                <p id="s1-desc">HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Design</p>
             </div>
             <div class="glass-card skill-card">
                 <i class="fa-solid fa-brain"></i>
@@ -642,34 +763,29 @@
     <section id="projects">
         <h2 class="section-title" id="projects-title">معرض الأعمال البرمجية</h2>
         <div class="projects-grid">
-            
-            <!-- Project 1 -->
             <div class="glass-card project-card">
                 <div>
                     <div class="project-img-wrapper">
-                        <!-- صورة تعبر عن الأكواد البرمجية -->
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="تطوير البرمجيات والأكواد" class="project-img">
                     </div>
-                    <h3 id="p1-title">منصة تحليل النصوص والذكاء الاصطناعي</h3>
-                    <p id="p1-desc">مشروع برمجي متقدم يعتمد على لغة JavaScript وربط واجهات الذكاء الاصطناعي (AI APIs) لمعالجة النصوص وإستخراج التحليلات الفورية بواجهة Glassmorphism جذابة.</p>
+                    <h3 id="p1-title">منصة الوكالة الرقمية (آمال)</h3>
+                    <p id="p1-desc">مشروع برمجي متقدم لتقديم الخدمات الرقمية للوكالات، مبني بأسلوب عصري مع دمج واجهات تفاعلية متطورة وتصميم ثنائي اللغة.</p>
                     <div class="tags">
                         <span class="tag">JavaScript</span>
-                        <span class="tag">AI APIs</span>
+                        <span class="tag">Digital Agency</span>
                         <span class="tag">HTML5/CSS3</span>
                     </div>
                 </div>
                 <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p1-btn">طلب مشروع مشابه</a>
             </div>
 
-            <!-- Project 2 -->
             <div class="glass-card project-card">
                 <div>
                     <div class="project-img-wrapper">
-                        <!-- صورة تعبر عن تصميم واجهات المتاجر والتطبيقات -->
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="تطوير واجهات المستخدم" class="project-img">
                     </div>
-                    <h3 id="p2-title">تطبيق متجر إلكتروني عالي الأداء</h3>
-                    <p id="p2-desc">واجهة ويب تفاعلية متجاوبة بالكامل لبناء المتاجر الحديثة، تتضمن نظام تصفية برمجي سلس، سلة شراء ديناميكية، وتجربة مستخدم مريحة على الموبايل والشاشات الكبيرة.</p>
+                    <h3 id="p2-title">تطبيق ويب عالي الأداء</h3>
+                    <p id="p2-desc">واجهة ويب تفاعلية متجاوبة بالكامل، تتضمن نظام تنقل سلس، وعرض ديناميكي للمحتوى، وتجربة مستخدم مريحة على الموبايل والشاشات الكبيرة.</p>
                     <div class="tags">
                         <span class="tag">UI/UX Design</span>
                         <span class="tag">JS ES6</span>
@@ -679,33 +795,29 @@
                 <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p2-btn">طلب مشروع مشابه</a>
             </div>
 
-            <!-- Project 3 -->
             <div class="glass-card project-card">
                 <div>
                     <div class="project-img-wrapper">
-                        <!-- صورة تعبر عن الرسوم البيانية ولوحات التحكم -->
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="لوحة تحكم إحصائية" class="project-img">
                     </div>
-                    <h3 id="p3-title">لوحة تحكم تفاعلية لإدارة البيانات</h3>
-                    <p id="p3-desc">تصميم وتطوير Dashboard تفاعلية لعرض الرسوم البيانية والإحصائيات بدقة عالية مع دعم الوضع الداكن والتأثيرات الزجاجية اللطيفة visual styling.</p>
+                    <h3 id="p3-title">دمج الذكاء الاصطناعي (AI Integration)</h3>
+                    <p id="p3-desc">برمجة وربط خوادم Vercel Serverless مع واجهات Gemini API لتقديم خدمات الرد الآلي وتحليل البيانات بشكل فوري داخل المواقع.</p>
                     <div class="tags">
                         <span class="tag">Frontend Dev</span>
-                        <span class="tag">Data Visuals</span>
-                        <span class="tag">Responsive</span>
+                        <span class="tag">AI Chatbots</span>
+                        <span class="tag">Vercel API</span>
                     </div>
                 </div>
                 <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p3-btn">طلب مشروع مشابه</a>
             </div>
 
-            <!-- Project 4 -->
             <div class="glass-card project-card">
                 <div>
                     <div class="project-img-wrapper">
-                        <!-- صورة تعبر عن بيئة العمل ومواقع البورتفوليو -->
                         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="موقع شخصي وبورتفوليو برمجي" class="project-img">
                     </div>
-                    <h3 id="p4-title">تطوير مواقع تعريفية ومحافظ أعمال (Portfolio)</h3>
-                    <p id="p4-desc">تطوير صفحات هبوط وشخصية خفيفة وسريعة التحميل بالكامل بأسلوب Glassmorphism عصري ودعم كامل للغتين العربية والإنجليزية مع التجاوب الشامل.</p>
+                    <h3 id="p4-title">تطوير مواقع تعريفية ومحافظ أعمال</h3>
+                    <p id="p4-desc">تطوير صفحات هبوط وشخصية خفيفة وسريعة التحميل بالكامل بأسلوب Glassmorphism عصري ودعم كامل للغتين العربية والإنجليزية.</p>
                     <div class="tags">
                         <span class="tag">Clean Code</span>
                         <span class="tag">Portfolio</span>
@@ -714,7 +826,6 @@
                 </div>
                 <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.88rem;" id="p4-btn">طلب مشروع مشابه</a>
             </div>
-
         </div>
     </section>
 
@@ -723,9 +834,7 @@
         <h2 class="section-title" id="contact-title">تواصل معي</h2>
         
         <div class="contact-container">
-            <!-- Premium Contact Information Cards -->
             <div class="contact-quick">
-                <!-- WhatsApp Card -->
                 <a href="https://wa.me/905423456316" target="_blank" class="quick-card">
                     <i class="fa-brands fa-whatsapp"></i>
                     <div class="quick-info">
@@ -735,7 +844,6 @@
                     </div>
                 </a>
 
-                <!-- Email Card -->
                 <a href="mailto:aborame5230200@icloud.com" class="quick-card">
                     <i class="fa-regular fa-envelope"></i>
                     <div class="quick-info">
@@ -745,7 +853,6 @@
                     </div>
                 </a>
 
-                <!-- Instagram Card -->
                 <a href="https://www.instagram.com/ahmed_abo_rame?stkn=eTJjOTVpaDhpYmNw&utm_source=qr" target="_blank" class="quick-card">
                     <i class="fa-brands fa-instagram"></i>
                     <div class="quick-info">
@@ -756,7 +863,6 @@
                 </a>
             </div>
 
-            <!-- Contact Form -->
             <div class="glass-card">
                 <form action="https://formspree.io/f/xnqyrzpk" method="POST" id="contact-form">
                     <div class="form-group">
@@ -781,10 +887,27 @@
 
     <!-- Footer -->
     <footer>
-        <p id="footer-text">جميع الحقوق محفوظة © 2026 أحمد حارثة - مطور ويب وذكاء اصطناعي</p>
+        <p id="footer-text">جميع الحقوق محفوظة © 2026 أحمد - مطور ويب وذكاء اصطناعي</p>
     </footer>
 
-    <!-- JavaScript Language Switcher Script -->
+    <!-- Chatbot Widget -->
+    <button class="chat-widget-btn" onclick="toggleChat()"><i class="fa-solid fa-robot"></i></button>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h4>المساعد الذكي لـ <span>أحمد</span></h4>
+            <button class="chat-close-btn" onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">مرحباً بك! أنا المساعد الذكي الخاص بالمطور أحمد. كيف يمكنني مساعدتك في مشروعك الرقمي اليوم؟</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="اكتب سؤالك هنا..." onkeypress="handleKeyPress(event)">
+            <button class="chat-send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- JavaScript Scripts -->
     <script>
         let currentLang = 'ar';
 
@@ -795,35 +918,35 @@
                 navProjects: 'المشاريع',
                 navContact: 'التواصل',
                 langBtn: 'English',
-                heroTitle: 'مرحباً، أنا <span>أحمد حارثة</span>',
+                heroTitle: 'مرحباً، أنا <span>أحمد</span>',
                 heroSubtitle: 'مطور ويب وذكاء اصطناعي (AI Web Developer)',
-                heroDesc: 'أقوم بابتكار وتطوير واجهات ويب فائقة الأداء، ودمج أدوات الذكاء الاصطناعي لبناء حلول برمجية متكاملة تلبي احتياجات المستخدمين وتوفر تجربة رقمية فريدة.',
+                heroDesc: 'أقوم بابتكار وتطوير واجهات ويب فائقة الأداء، ودمج أدوات الذكاء الاصطناعي لبناء حلول برمجية متكاملة للوكالات الرقمية والمشاريع المتقدمة.',
                 heroBtn: '<i class="fa-solid fa-paper-plane"></i> تواصل معي',
                 heroBtnSec: '<i class="fa-solid fa-laptop-code"></i> استعراض الأعمال',
                 aboutTitle: 'نبذة عنّي',
-                aboutDesc: 'مطور برمجيات متخصص في تطوير واجهات الويب الحديثة والحلول الذكية. أمتلك خبرة في بناء تطبيقات ويب تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript، بالإضافة إلى دمج واجهات برمجة التطبيقات (APIs) للذكاء الاصطناعي مع الاهتمام بأدق تفاصيل تجربة المستخدم (UI/UX) والتصميم العصري (Glassmorphism).',
+                aboutDesc: 'مطور برمجيات متخصص في تطوير واجهات الويب الحديثة والحلول الذكية. أمتلك خبرة في بناء تطبيقات ويب تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript، بالإضافة إلى دمج واجهات برمجة التطبيقات (APIs) للذكاء الاصطناعي مع الاهتمام بأدق تفاصيل تجربة المستخدم (UI/UX).',
                 h1Text: 'التزام بالجودة والدقة',
                 h2Text: 'دمج تقنيات الذكاء الاصطناعي',
                 h3Text: 'تصاميم متطورة واستجابة كاملة',
                 skillsTitle: 'المهارات والتقنيات',
                 s1Title: 'تطوير الواجهات Front-End',
-                s1Desc: 'HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Glassmorphism Design',
+                s1Desc: 'HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Design',
                 s2Title: 'دمج الذكاء الاصطناعي AI',
                 s2Desc: 'API Integration, LLM Models, Prompt Engineering, Automation Workflows',
                 s3Title: 'أدوات وبيئة العمل',
                 s3Desc: 'VS Code, Git & GitHub, Vercel Deployment, Web Performance Optimization',
                 projectsTitle: 'معرض الأعمال البرمجية',
-                p1Title: 'منصة تحليل النصوص والذكاء الاصطناعي',
-                p1Desc: 'مشروع برمجي متقدم يعتمد على لغة JavaScript وربط واجهات الذكاء الاصطناعي (AI APIs) لمعالجة النصوص وإستخراج التحليلات الفورية بواجهة Glassmorphism جذابة.',
+                p1Title: 'منصة الوكالة الرقمية (آمال)',
+                p1Desc: 'مشروع برمجي متقدم لتقديم الخدمات الرقمية للوكالات، مبني بأسلوب عصري مع دمج واجهات تفاعلية متطورة وتصميم ثنائي اللغة.',
                 p1Btn: 'طلب مشروع مشابه',
-                p2Title: 'تطبيق متجر إلكتروني عالي الأداء',
-                p2Desc: 'واجهة ويب تفاعلية متجاوبة بالكامل لبناء المتاجر الحديثة، تتضمن نظام تصفية برمجي سلس، سلة شراء ديناميكية، وتجربة مستخدم مريحة على الموبايل والشاشات الكبيرة.',
+                p2Title: 'تطبيق ويب عالي الأداء',
+                p2Desc: 'واجهة ويب تفاعلية متجاوبة بالكامل، تتضمن نظام تنقل سلس، وعرض ديناميكي للمحتوى، وتجربة مستخدم مريحة على الموبايل والشاشات الكبيرة.',
                 p2Btn: 'طلب مشروع مشابه',
-                p3Title: 'لوحة تحكم تفاعلية لإدارة البيانات',
-                p3Desc: 'تصميم وتطوير Dashboard تفاعلية لعرض الرسوم البيانية والإحصائيات بدقة عالية مع دعم الوضع الداكن والتأثيرات الزجاجية اللطيفة visual styling.',
+                p3Title: 'دمج الذكاء الاصطناعي (AI Integration)',
+                p3Desc: 'برمجة وربط خوادم Vercel Serverless مع واجهات Gemini API لتقديم خدمات الرد الآلي وتحليل البيانات بشكل فوري داخل المواقع.',
                 p3Btn: 'طلب مشروع مشابه',
-                p4Title: 'تطوير مواقع تعريفية ومحافظ أعمال (Portfolio)',
-                p4Desc: 'تطوير صفحات هبوط وشخصية خفيفة وسريعة التحميل بالكامل بأسلوب Glassmorphism عصري ودعم كامل للغتين العربية والإنجليزية مع التجاوب الشامل.',
+                p4Title: 'تطوير مواقع تعريفية ومحافظ أعمال',
+                p4Desc: 'تطوير صفحات هبوط وشخصية خفيفة وسريعة التحميل بالكامل بأسلوب Glassmorphism عصري ودعم كامل للغتين العربية والإنجليزية.',
                 p4Btn: 'طلب مشروع مشابه',
                 contactTitle: 'تواصل معي',
                 qcPhone: 'WhatsApp',
@@ -838,7 +961,7 @@
                 phEmail: 'example@mail.com',
                 phMsg: 'اكتب تفاصيل مشروعك أو استفسارك هنا...',
                 btnSubmit: '<i class="fa-solid fa-paper-plane"></i> إرسال الرسالة',
-                footerText: 'جميع الحقوق محفوظة © 2026 أحمد حارثة - مطور ويب وذكاء اصطناعي'
+                footerText: 'جميع الحقوق محفوظة © 2026 أحمد - مطور ويب وذكاء اصطناعي'
             },
             en: {
                 navAbout: 'About',
@@ -846,35 +969,35 @@
                 navProjects: 'Projects',
                 navContact: 'Contact',
                 langBtn: 'العربية',
-                heroTitle: 'Hi, I am <span>Ahmed Haritha</span>',
+                heroTitle: 'Hi, I am <span>Ahmed</span>',
                 heroSubtitle: 'AI Web Developer',
-                heroDesc: 'Creating modern, high-performance web interfaces and integrating AI tools to build powerful digital products and seamless user experiences.',
+                heroDesc: 'Creating modern, high-performance web interfaces and integrating AI tools to build powerful digital products for agencies and advanced projects.',
                 heroBtn: '<i class="fa-solid fa-paper-plane"></i> Get in Touch',
                 heroBtnSec: '<i class="fa-solid fa-laptop-code"></i> View Projects',
                 aboutTitle: 'About Me',
-                aboutDesc: 'Software developer specializing in modern front-end engineering and AI integration. Experienced in crafting responsive, interactive web applications using HTML5, CSS3, JavaScript, and integrating AI APIs, focused on crisp UI/UX and Glassmorphism styling.',
+                aboutDesc: 'Software developer specializing in modern front-end engineering and AI integration. Experienced in crafting responsive, interactive web applications using HTML5, CSS3, JavaScript, and integrating AI APIs, focused on crisp UI/UX.',
                 h1Text: 'Commitment to Quality',
                 h2Text: 'AI Integration Stack',
                 h3Text: 'Fully Responsive Modern UI',
                 skillsTitle: 'Skills & Tech Stack',
                 s1Title: 'Front-End Development',
-                s1Desc: 'HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Glassmorphism Design',
+                s1Desc: 'HTML5, CSS3, Modern JavaScript, Flexbox, CSS Grid, Responsive Design',
                 s2Title: 'AI Integration',
                 s2Desc: 'API Integration, LLM Models, Prompt Engineering, Automation Workflows',
                 s3Title: 'Developer Tools',
                 s3Desc: 'VS Code, Git & GitHub, Vercel Deployment, Web Performance Optimization',
                 projectsTitle: 'Programming Portfolio',
-                p1Title: 'AI Text Analysis Platform',
-                p1Desc: 'Advanced web project built with JavaScript & AI APIs for instant text processing and analysis delivered via a sleek Glassmorphism interface.',
+                p1Title: 'Digital Agency Platform (Amal)',
+                p1Desc: 'Advanced web project for digital agency services, featuring bilingual design and modern interactive interfaces.',
                 p1Btn: 'Request Similar Project',
-                p2Title: 'High-Performance E-Commerce Web App',
-                p2Desc: 'Fully responsive e-commerce front-end featuring dynamic filtering, interactive shopping cart, and smooth mobile-first UX.',
+                p2Title: 'High-Performance Web App',
+                p2Desc: 'Fully responsive front-end featuring dynamic content display, smooth navigation, and a mobile-first user experience.',
                 p2Btn: 'Request Similar Project',
-                p3Title: 'Interactive Data Dashboard',
-                p3Desc: 'Interactive admin dashboard visualizing complex analytics, charts, and metrics with glassmorphism dark-theme styling.',
+                p3Title: 'AI API Integration',
+                p3Desc: 'Programming and connecting Vercel Serverless functions with Gemini AI APIs to provide instant automated responses and data analysis.',
                 p3Btn: 'Request Similar Project',
                 p4Title: 'Custom Portfolio & Landing Pages',
-                p4Desc: 'Fast, lightweight portfolio & landing pages designed with modern CSS effects, full multi-language support, and optimal responsive layouts.',
+                p4Desc: 'Fast, lightweight portfolio & landing pages designed with modern CSS effects and full multi-language support.',
                 p4Btn: 'Request Similar Project',
                 contactTitle: 'Contact Me',
                 qcPhone: 'WhatsApp',
@@ -889,7 +1012,7 @@
                 phEmail: 'example@mail.com',
                 phMsg: 'Write your project details or message here...',
                 btnSubmit: '<i class="fa-solid fa-paper-plane"></i> Send Message',
-                footerText: 'All rights reserved © 2026 Ahmed Haritha - AI Web Developer'
+                footerText: 'All rights reserved © 2026 Ahmed - AI Web Developer'
             }
         };
 
@@ -957,6 +1080,58 @@
             document.getElementById('btn-submit').innerHTML = t.btnSubmit;
             
             document.getElementById('footer-text').innerText = t.footerText;
+        }
+
+        /* Chatbot Functions */
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            appendMessage(text, 'user');
+            input.value = '';
+
+            const typingIndicator = appendMessage('جاري التفكير...', 'bot');
+
+            try {
+                // الاتصال بملف السيرفر الذي قمنا بإنشائه على Vercel
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+
+                const data = await response.json();
+                typingIndicator.remove();
+
+                if (data.reply) {
+                    appendMessage(data.reply, 'bot');
+                } else {
+                    appendMessage('عذراً، حدث خطأ في النظام. يرجى التأكد من إضافة مفتاح API في Vercel.', 'bot');
+                }
+            } catch (err) {
+                typingIndicator.remove();
+                appendMessage('تعذر الاتصال بالخادم حالياً. يرجى الانتظار لحين تحميل Vercel للتحديثات.', 'bot');
+            }
+        }
+
+        function appendMessage(text, sender) {
+            const container = document.getElementById('chatMessages');
+            const msg = document.createElement('div');
+            msg.className = `message ${sender}`;
+            msg.innerText = text;
+            container.appendChild(msg);
+            container.scrollTop = container.scrollHeight;
+            return msg;
         }
     </script>
 </body>
